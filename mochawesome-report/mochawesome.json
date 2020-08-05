@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-03T09:59:04.859Z",
+    "end": "2020-08-03T09:59:15.095Z",
+    "duration": 10236,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fc8171a9-5a9c-4807-a664-d287eeff1727",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "071046de-8945-40a4-86fd-83c2d11527d3",
+          "title": "Selenium Demo Test Suite",
+          "fullFile": "D:\\SeleniumExample\\index.js",
+          "file": "\\index.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "Selenium Demo Test Suite \"before all\" hook",
+              "timedOut": false,
+              "duration": 38,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// initializing chrome driver\n   driver = new webdriver.Builder()\n    .withCapabilities(webdriver.Capabilities.chrome())\n    .build();\n  //  driver = new Builder().forBrowser(\"chrome\").build();\n// maximizing chrome browser\ndriver.manage().window().maximize();",
+              "err": {},
+              "uuid": "c1c8d265-6a02-4ce9-baaf-9b696536613a",
+              "parentUUID": "071046de-8945-40a4-86fd-83c2d11527d3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "Selenium Demo Test Suite \"after all\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// driver.quit();",
+              "err": {},
+              "uuid": "b6bbe0a4-1c65-4a18-9726-56f10e26d682",
+              "parentUUID": "071046de-8945-40a4-86fd-83c2d11527d3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "localhost open",
+              "fullTitle": "Selenium Demo Test Suite localhost open",
+              "timedOut": false,
+              "duration": 10111,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let Url = `http://localhost:8080/?#`;\nreturn driver.get(Url).then(function () {\n    console.log(`Page \"${Url}\" opened`);\n}).then(() => {\n    return driver.getCurrentUrl().then((currentUrl) => {\n        currentUrl.should.include(\n            `http://localhost:8080/?#`,\n            `Expected url: http://localhost:8080/?#, Actual url: ${currentUrl}`);\n    }).then(() => {\n      return driver.wait(until.elementLocated(By.id(\"empname\")), 5000)\n      .then(function(){\n          driver.sleep(5000)\n          .then(function(){\n                      return driver.findElement(By.id(\"empname\")).sendKeys(\"arun\");\n                  })\n      }).then(() => {\n/*\n          return driver.wait(until.elementLocated(By.id(\"empage\")), 5000)\n      .then(function(){\n          driver.sleep(5000)\n          .then(function(){\n                      return driver.findElement(By.id(\"empage\")).sendKeys(\"23\");\n                  })*/\n               \n       let searchBox1 = driver.findElement(webdriver.By.id('empage'));\n          //searchBox.sendKeys('23');\n          return searchBox1.sendKeys('21').then(() => {\n              \n          })\n         \n      .then(() => {\n/*\n          return driver.wait(until.elementLocated(By.id(\"empposition1\")), 5000)\n          .then(function(){\n              driver.sleep(5000)\n              .then(function(){\n                          return driver.findElement(By.id(\"empposition\")).sendKeys(\"dev\");\n                      })*/\n                    \n  \n          let searchBox2 = driver.findElement(webdriver.By.id('empposition'));\n          //searchBox.sendKeys('developer');\n          return searchBox2.sendKeys('dev').then(() => {\n              \n          }).then(() => {\n              return driver.wait(until.elementLocated(By.id(\"addbtn\")), 5000)\n      .then(function(){\n          driver.sleep(5000)\n          .then(function(){\n                      return driver.findElement(By.id(\"addbtn\")).click();\n                  })\n      });\n         \n    });\n});\n  });\n});\n});",
+              "err": {},
+              "uuid": "647a7af2-fc4c-4bbb-9a8e-1fb7e4199dca",
+              "parentUUID": "071046de-8945-40a4-86fd-83c2d11527d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "647a7af2-fc4c-4bbb-9a8e-1fb7e4199dca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10111,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
